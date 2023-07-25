@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HW</title>
+</head>
+
+<body>
+  <div>Running a compiled lua script</div>
+  <script>
+    var Module = {};
+    Module.onRuntimeInitialized = () => {
+      const hello = Module.cwrap('hello', 'string')
+      console.log(hello())
+    }
+  </script>
+  <script async src="hello.js"></script>
+</body>
+
+</html>
